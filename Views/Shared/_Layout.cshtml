@@ -38,17 +38,19 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Servicios</a>
                         </li>
                       
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Nosotros</a>
+                        </li>                    
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Registrar Producto</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Productos" asp-action="Registro">Registrar Producto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Producto</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Productos" asp-action="Index">Producto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Registrar Servicio</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Servicios" asp-action="Registro">Registrar Servicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Servicio</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Servicios" asp-action="Index">Servicio</a>
                         </li>                 
                     
                          @if(!User.Identity.IsAuthenticated){

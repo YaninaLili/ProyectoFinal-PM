@@ -1,0 +1,38 @@
+@model Servicio
+
+<h1>Registro de Servicios</h1>
+
+<form method="post">
+    <div asp-validation-summary="All"></div>
+
+    <div class="form-group">
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Tipo"></label>
+        <select asp-for="Tipo" class="form-control">
+            <option value="Colonoterapia">Colonoterapia</option>
+            <option value="Masajes">Masajes</option>
+            <option value="Aplicacion">Aplicación de vitaminas</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Tiempo"></label>
+        <input asp-for="Tiempo" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Precio"></label>
+        <input asp-for="Precio" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="Descripcion"></label>
+        <textarea asp-for="Descripcion" rows="10" class="form-control"></textarea>
+    </div>
+
+    <button class="btn btn-primary">Registrar</button>
+</form>

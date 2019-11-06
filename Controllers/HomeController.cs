@@ -15,14 +15,25 @@ namespace ProyectoFinal_PM.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult methodName()
         {
-            return View();
+          //TODO: Implement Realistic Implementation
+          return View();
         }
 
+<<<<<<< HEAD
         public IActionResult Nosotros()
         {
             return View();
         }
+=======
+
+
+
+
+
+
+
+>>>>>>> 9c738943644f6cea6f68d35ca7124be1d34419ae
     }
 }
