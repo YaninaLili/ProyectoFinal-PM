@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+
 namespace ProyectoFinal_PM.Models
 {
     public class CrearCuentaViewModel

@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using ProyectoFinal_PM.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace ProyectoFinal_PM
 {
@@ -31,6 +34,20 @@ namespace ProyectoFinal_PM
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddDbContext<VidaSaludableContext>(o => o.UseMySql("server=localhost;user=root;password=;database=VidaSaludableBD;"));
+
+            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<VidaSaludableContext>();
+
+            //Para la contraseña menos fuerte
+            services.Configure<IdentityOptions>(options => 
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+            }
+            );
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -52,6 +69,7 @@ namespace ProyectoFinal_PM
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
