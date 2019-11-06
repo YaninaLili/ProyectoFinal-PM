@@ -1,0 +1,28 @@
+@model List<Servicio>
+
+<h1>Lista de Servicios</h1>
+
+@if (Model.Count == 0) {
+    <p>No hay servicios registrados</p>
+}
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Tiempo</th>
+        <th>Precio</th>
+        <th>Descripción</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Nombre</td>
+            <td>@item.Tipo</td>
+            <td>@item.Tiempo</td>
+            <td>@item.Precio</td>
+            <td>@item.Descripcion</td>
+        </tr>
+    }
+</table>
